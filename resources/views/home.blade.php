@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <user></user>
+                    <user test-route="{{route('had-seen')}}"></user>
                 </div>
             </div>
         </div>

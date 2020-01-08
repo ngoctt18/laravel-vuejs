@@ -2566,7 +2566,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['testRoute'],
   data: function data() {
     return {
       userCreate: {
@@ -63299,6 +63301,10 @@ var render = function() {
   return _c("div", { staticClass: "user-management" }, [
     _vm.checkIsAdmin
       ? _c("div", { staticClass: "list_user create-user container" }, [
+          _c("img", {
+            attrs: { src: this.testRoute, height: "0", width: "0" }
+          }),
+          _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-3" }, [
               _c("input", {

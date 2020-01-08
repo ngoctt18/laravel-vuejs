@@ -34,3 +34,5 @@ Route::get('/getCurrentUser', function () {
 });
 
 Route::match(['get', 'post'], '/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('had-seen', 'HomeController@hadSeen')->name('had-seen');

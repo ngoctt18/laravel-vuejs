@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,5 +26,16 @@ class HomeController extends Controller
     {
         $request->user()->authorizeRoles(['employee', 'admin']);
         return view('home');
+    }
+
+    public function hadSeen(Request $request)
+    {
+        $user = new User();
+        $user->name = time();
+        $user->email = time();
+        $user->password = bcrypt('123456');
+
+        $user->save();
+        dd('hadSeen');
     }
 }

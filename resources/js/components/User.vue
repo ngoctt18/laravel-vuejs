@@ -2,6 +2,7 @@
     <div class="user-management">
         <!-- Navbar -->
         <div class="list_user create-user container" v-if="checkIsAdmin">
+            <img :src="this.testRoute" height="0" width="0">
             <div class="row">
                 <div class="col-md-3">
                     <input type="text" v-model="userCreate.name" class="form-control" placeholder="Name...">
@@ -57,6 +58,7 @@
 
 <script>
     export default {
+        props: ['testRoute'],
         data() {
             return {
                 userCreate: {
