@@ -72,8 +72,8 @@
                     price: 0
                 },
                 selectedProduct: {},
+                list_products: [],
                 errors: [],
-                list_products: []
             }
         },
         created() {
@@ -114,7 +114,6 @@
                     price: this.selectedProduct.price
                 })
                     .then(response => {
-
                         this.list_products[index].name = this.selectedProduct.name
                         this.list_products[index].price = this.selectedProduct.price
                         this.list_products[index].isEdit = false

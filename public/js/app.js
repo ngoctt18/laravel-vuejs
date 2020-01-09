@@ -1917,8 +1917,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         price: 0
       },
       selectedProduct: {},
-      errors: [],
-      list_products: []
+      list_products: [],
+      errors: []
     };
   },
   created: function created() {
@@ -2509,6 +2509,36 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2577,7 +2607,9 @@ __webpack_require__.r(__webpack_exports__);
         role: 'employee'
       },
       currentUser: {},
-      list_users: []
+      selectedUser: {},
+      list_users: [],
+      errors: []
     };
   },
   created: function created() {
@@ -2589,8 +2621,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/getCurrentUser').then(function (response) {
-        _this.currentUser = response.data;
-        console.log(response.data);
+        _this.currentUser = response.data; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error);
       });
@@ -2612,28 +2643,69 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       axios.post('/users', {
-        user: this.userCreate
+        name: this.userCreate.name,
+        email: this.userCreate.email,
+        role: this.userCreate.role
       }).then(function (response) {
         console.log(response);
         _this3.userCreate = {};
 
         _this3.getListUsers();
+
+        _this3.errors = [];
       })["catch"](function (error) {
-        console.log(error);
+        _this3.errors = error.response.data.errors;
       });
+    },
+    selectUser: function selectUser(user) {
+      this.list_users.forEach(function (a_user) {
+        Vue.set(a_user, 'isEdit', false);
+      });
+      this.selectedUser = _objectSpread({}, user);
+      user.isEdit = true;
+    },
+    updateUser: function updateUser(index) {
+      var _this4 = this;
+
+      axios.put('/users/' + this.selectedUser.id, {
+        name: this.selectedUser.name,
+        email: this.selectedUser.email
+      }).then(function (response) {
+        _this4.list_users[index].name = _this4.selectedUser.name;
+        _this4.list_users[index].email = _this4.selectedUser.email;
+        _this4.list_users[index].isEdit = false;
+        _this4.errors = [];
+      })["catch"](function (error) {
+        if (error.response != null) {
+          _this4.errors = error.response.data.errors;
+        }
+      });
+    },
+    deleteUser: function deleteUser(user, index) {
+      var _this5 = this;
+
+      var check = confirm('Xóa nhé?');
+
+      if (check) {
+        axios["delete"]('/users/' + user.id).then(function (response) {
+          console.log(response.data);
+
+          _this5.list_users.splice(index, 1);
+        })["catch"](function (error) {
+          _this5.errors = error.response.data.errors.name;
+        });
+      }
     }
   },
   computed: {
     checkIsAdmin: function checkIsAdmin() {
       if (this.currentUser.roles) {
         var check = false;
-        console.log(check);
         this.currentUser.roles.forEach(function (role) {
           if (role.name === 'admin') {
             check = true;
           }
         });
-        console.log(check);
         return check;
       }
     }
@@ -63301,9 +63373,21 @@ var render = function() {
   return _c("div", { staticClass: "user-management" }, [
     _vm.checkIsAdmin
       ? _c("div", { staticClass: "list_user create-user container" }, [
-          _c("img", {
-            attrs: { src: this.testRoute, height: "0", width: "0" }
-          }),
+          _c(
+            "div",
+            { staticClass: "error" },
+            [
+              _vm._l(_vm.errors, function(err, index) {
+                return _c("span", [
+                  _vm._v("\n                " + _vm._s(err[0]) + " "),
+                  _c("br")
+                ])
+              }),
+              _vm._v(" "),
+              _c("hr")
+            ],
+            2
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-3" }, [
@@ -63436,13 +63520,92 @@ var render = function() {
         _vm.list_users.length
           ? _c(
               "tbody",
-              _vm._l(_vm.list_users, function(user) {
+              _vm._l(_vm.list_users, function(user, index) {
                 return _c("tr", [
                   _c("td", [_vm._v(_vm._s(user.id))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(user.name))]),
+                  user.isEdit
+                    ? _c("td", [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selectedUser.name,
+                              expression: "selectedUser.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: _vm.errors["name"] != null ? "is-invalid" : "",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.selectedUser.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.selectedUser,
+                                "name",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-danger" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm.errors["name"] != null
+                                ? _vm.errors["name"][0]
+                                : ""
+                            )
+                          )
+                        ])
+                      ])
+                    : _c("td", [_vm._v(_vm._s(user.name))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(user.email))]),
+                  user.isEdit
+                    ? _c("td", [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.selectedUser.email,
+                              expression: "selectedUser.email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class:
+                            _vm.errors["email"] != null ? "is-invalid" : "",
+                          attrs: { type: "text" },
+                          domProps: { value: _vm.selectedUser.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.selectedUser,
+                                "email",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-danger" }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm.errors["email"] != null
+                                ? _vm.errors["email"][0]
+                                : ""
+                            )
+                          )
+                        ])
+                      ])
+                    : _c("td", [_vm._v(_vm._s(user.email))]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -63460,14 +63623,62 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _vm.checkIsAdmin
-                    ? _c("td", [
-                        _c("button", { staticClass: "btn btn-success" }, [
-                          _vm._v("Edit")
-                        ]),
-                        _vm._v(" "),
-                        _c("button", { staticClass: "btn btn-danger" }, [
-                          _vm._v("Delete")
-                        ])
+                    ? _c("div", [
+                        user.isEdit
+                          ? _c("td", [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.updateUser(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Save")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-danger",
+                                  on: {
+                                    click: function($event) {
+                                      user.isEdit = false
+                                    }
+                                  }
+                                },
+                                [_vm._v("Cancel")]
+                              )
+                            ])
+                          : _c("td", [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-success",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.selectUser(user)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Edit")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-danger",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.deleteUser(user, index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Delete")]
+                              )
+                            ])
                       ])
                     : _vm._e()
                 ])

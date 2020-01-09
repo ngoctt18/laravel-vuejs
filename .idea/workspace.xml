@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="074e9703-2c47-4352-bb1c-b39d6e80bc97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vue.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vue.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ApiCalling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ApiCalling.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/User.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -134,13 +138,34 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="npm run watch" />
+    </option>
+  </component>
+  <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.watch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -174,7 +199,12 @@
       <workItem from="1578101212245" duration="4301000" />
       <workItem from="1578273656775" duration="12602000" />
       <workItem from="1578361521604" duration="5110000" />
-      <workItem from="1578447741077" duration="870000" />
+      <workItem from="1578447741077" duration="1408000" />
+      <workItem from="1578450614124" duration="15212000" />
+      <workItem from="1578477041290" duration="264000" />
+      <workItem from="1578477318038" duration="2775000" />
+      <workItem from="1578534292359" duration="41000" />
+      <workItem from="1578534385118" duration="3467000" />
     </task>
     <servers />
   </component>
@@ -182,18 +212,47 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578383192436">
+    <state x="480" y="165" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578450541539">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="530" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1578383192436" />
-    <state x="301" y="72" key="SettingsEditor" timestamp="1578275425939">
+    <state x="480" y="165" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1578450541539" />
+    <state x="530" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578456160569">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1578275425939" />
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1578447979747">
+    <state x="530" y="184" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1578456160569" />
+    <state x="92" y="92" width="1354" height="716" key="DiffContextDialog" timestamp="1578539322085">
+      <screen x="0" y="0" width="1538" height="900" />
+    </state>
+    <state x="92" y="92" width="1354" height="716" key="DiffContextDialog/0.0.1538.900@0.0.1538.900" timestamp="1578539322085" />
+    <state width="1601" height="209" key="GridCell.Tab.0.bottom" timestamp="1578456251881">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1578447979747" />
+    <state width="1601" height="209" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1578456251881" />
+    <state width="1601" height="209" key="GridCell.Tab.0.center" timestamp="1578456251881">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1601" height="209" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1578456251881" />
+    <state width="1601" height="209" key="GridCell.Tab.0.left" timestamp="1578456251880">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1601" height="209" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1578456251880" />
+    <state width="1601" height="209" key="GridCell.Tab.0.right" timestamp="1578456251881">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1601" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1578456251881" />
+    <state x="289" y="75" key="SettingsEditor" timestamp="1578538835807">
+      <screen x="0" y="0" width="1538" height="900" />
+    </state>
+    <state x="289" y="75" key="SettingsEditor/0.0.1538.900@0.0.1538.900" timestamp="1578538835807" />
+    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1578478155484" />
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1578534385534">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1578534385534" />
+    <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578472382106">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1578472382106" />
     <state x="486" y="151" width="758" height="628" key="find.popup" timestamp="1578043999186">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -202,9 +261,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="441" y="156" width="700" height="530" key="recent.locations.popup/0.0.1600.860@0.0.1600.860" timestamp="1577954224672" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1578382793817">
+    <state x="456" y="195" width="672" height="677" key="run.anything.popup" timestamp="1578471761485">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="456" y="195" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1578471761485" />
+    <state x="445" y="188" width="672" height="710" key="search.everywhere.popup" timestamp="1578538568261">
+      <screen x="0" y="0" width="1538" height="900" />
+    </state>
+    <state x="445" y="188" width="672" height="710" key="search.everywhere.popup/0.0.1538.900@0.0.1538.900" timestamp="1578538568261" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1578382793817" />
     <state x="522" y="334" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1578299464462">
       <screen x="0" y="0" width="1600" height="860" />

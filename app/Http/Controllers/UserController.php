@@ -22,11 +22,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->input('user');
+        $this->validate($request, [
+            'name' => 'required|min:5',
+            'email' => 'required|email|unique:users,email',
+            'role' => 'required',
+        ]);
         $user = new User();
-        $user->name = $data['name'];
-        $user->email = $data['email'];
+        $user->name = $request->name;
+        $user->email = $request->email;
         $user->password = bcrypt('123456');
-        $role = Role::where('name', $data['role'])->first();
+        $role = Role::where('name', $request->role)->first();
 
         $user->save();
 
@@ -46,11 +51,29 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:5',
+            'email' => 'required|unique:users,email,' . $id . '|email',
+        ]);
+
+        $user = User::find($id);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        $user->save();
+
+        return response([
+            'user' => $user
+        ], 200);
     }
 
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return response([
+            'result' => 'success'
+        ], 200);
     }
 }

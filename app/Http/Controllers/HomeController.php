@@ -30,12 +30,12 @@ class HomeController extends Controller
 
     public function hadSeen(Request $request)
     {
+        dd('hadSeen');
         $user = new User();
         $user->name = time();
         $user->email = time();
         $user->password = bcrypt('123456');
 
         $user->save();
-        dd('hadSeen');
     }
 }
