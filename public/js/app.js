@@ -2658,6 +2658,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     selectUser: function selectUser(user) {
+      this.errors = [];
       this.list_users.forEach(function (a_user) {
         Vue.set(a_user, 'isEdit', false);
       });

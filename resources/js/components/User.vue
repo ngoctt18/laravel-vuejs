@@ -140,6 +140,7 @@
                     })
             },
             selectUser(user) {
+                this.errors = [];
                 this.list_users.forEach(a_user => {
                     Vue.set(a_user, 'isEdit', false);
                 });
