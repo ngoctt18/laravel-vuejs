@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="074e9703-2c47-4352-bb1c-b39d6e80bc97" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vue.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vue.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/User.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +197,8 @@
       <workItem from="1578477041290" duration="264000" />
       <workItem from="1578477318038" duration="2775000" />
       <workItem from="1578534292359" duration="41000" />
-      <workItem from="1578534385118" duration="4203000" />
+      <workItem from="1578534385118" duration="4441000" />
+      <workItem from="1578540983510" duration="418000" />
     </task>
     <servers />
   </component>
@@ -233,15 +234,15 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1601" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1578456251881" />
-    <state x="289" y="75" key="SettingsEditor" timestamp="1578538835807">
-      <screen x="0" y="0" width="1538" height="900" />
-    </state>
-    <state x="289" y="75" key="SettingsEditor/0.0.1538.900@0.0.1538.900" timestamp="1578538835807" />
-    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1578478155484" />
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1578534385534">
+    <state x="301" y="72" key="SettingsEditor" timestamp="1578541057517">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1578534385534" />
+    <state x="289" y="75" key="SettingsEditor/0.0.1538.900@0.0.1538.900" timestamp="1578538835807" />
+    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1578541057517" />
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1578540989787">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1578540989787" />
     <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578472382106">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
