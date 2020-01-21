@@ -134,6 +134,12 @@
             }
         }
     }
+
+    // setInterval(function () {
+    //     $('.questionDropdownContainer span[data-index="1"]').click();
+    //     $('.surveyDashboardCTA').click();
+    // }, 7000);
+
 </script>
 
 <style lang="scss" scoped>
