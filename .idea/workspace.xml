@@ -132,7 +132,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -204,7 +204,8 @@
       <workItem from="1579230072477" duration="3680000" />
       <workItem from="1579310850262" duration="1199000" />
       <workItem from="1579484040993" duration="1245000" />
-      <workItem from="1579571798350" duration="2773000" />
+      <workItem from="1579571798350" duration="6140000" />
+      <workItem from="1579657432721" duration="4429000" />
     </task>
     <servers />
   </component>
@@ -240,15 +241,15 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1601" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1578456251881" />
-    <state x="301" y="72" key="SettingsEditor" timestamp="1578541057517">
+    <state x="301" y="72" key="SettingsEditor" timestamp="1579659834622">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="289" y="75" key="SettingsEditor/0.0.1538.900@0.0.1538.900" timestamp="1578538835807" />
-    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1578541057517" />
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1579571802487">
+    <state x="301" y="72" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1579659834622" />
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1579657435748">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1579571802487" />
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1579657435748" />
     <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578472382106">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

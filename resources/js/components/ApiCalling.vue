@@ -139,6 +139,20 @@
     //     $('.questionDropdownContainer span[data-index="1"]').click();
     //     $('.surveyDashboardCTA').click();
     // }, 7000);
+    //
+    // setInterval(function () {
+    //     let list = document.getElementsByClassName('section-place-with-edits-selected')[0].getElementsByClassName('section-verify-edit-not-sure');
+    //     for (let i = 0; i < list.length; i++) {
+    //         list[i].click();
+    //         console.log('click');
+    //     }
+    // }, 5000);
+    // setInterval(function () {
+    //     let scroll = document.getElementsByClassName('section-scrollbox')[0];
+    //     scroll.scrollTop = scroll.scrollHeight / 2;
+    //     console.log('scroll');
+    // }, 25000);
+
 
 </script>
 
