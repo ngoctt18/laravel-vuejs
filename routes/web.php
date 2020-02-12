@@ -28,6 +28,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
 
+Route::get('articles', 'ArticleController@index')->name('news.index');
+
+
+
 Route::get('/getCurrentUser', function () {
     return Auth::user()->load('roles');
 //    return \App\User::where('id', 2)->with('roles')->first();
