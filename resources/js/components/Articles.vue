@@ -63,15 +63,27 @@
         methods: {
             fetchArticles(page_url) {
                 page_url = page_url || '/api/articles';
-                fetch(page_url)
-                    .then(res => {
-                        return res.json();
-                    })
-                    .then(res => {
+                // fetch(page_url)
+                //     .then(res => {
+                //         return res.json();
+                //     })
+                //     .then(res => {
+                //         this.articles = res.data;
+                //         this.makePagination(res.meta, res.links);
+                //     })
+                //     .catch(err => console.log(err))
+                axios.get(page_url)
+                    .then(response => {
+                        let res = response.data;
+                        console.log(response);
+                        console.log(res);
                         this.articles = res.data;
                         this.makePagination(res.meta, res.links);
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        console.log(err);
+                        console.log(err);
+                    })
             },
             makePagination(meta, links) {
                 let pagination = {
@@ -98,19 +110,33 @@
             addArticle() {
                 if (this.edit == false) {
                     // Add
-                    fetch('/api/articles', {
-                        method: 'POST',
-                        body: JSON.stringify(this.article),
-                        headers: {
-                            'content-type': 'application/json'
-                        }
-                    })
-                        .then(res => res.json())
-                        .then(res => {
+                    // fetch('/api/articles', {
+                    //     method: 'POST',
+                    //     body: {
+                    //         title: this.article.title,
+                    //         body: this.article.body
+                    //     },
+                    //     headers: {
+                    //         'content-type': 'application/json'
+                    //     }
+                    // })
+                    //     .then(res => res.json())
+                    //     .then(res => {
+                    //         alert("Here we go");
+                    //         this.article.title = '';
+                    //         this.article.body = '';
+                    //         this.fetchArticles();
+                    //     })
+                    // .catch(err => console.log(err))
+                    axios.post('/api/articles', this.article)
+                        .then(response => {
                             alert("Here we go");
                             this.article.title = '';
                             this.article.body = '';
                             this.fetchArticles();
+                        })
+                        .catch(err => {
+                            console.log(err)
                         })
                 } else if (this.edit == true && this.article.id != null) {
                     // Update
@@ -128,6 +154,7 @@
                             this.article.body = '';
                             this.fetchArticles();
                         })
+                        .catch(err => console.log(err))
                 }
             },
             editArticle(article) {

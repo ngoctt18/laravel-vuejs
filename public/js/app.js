@@ -1997,15 +1997,26 @@ __webpack_require__.r(__webpack_exports__);
     fetchArticles: function fetchArticles(page_url) {
       var _this = this;
 
-      page_url = page_url || '/api/articles';
-      fetch(page_url).then(function (res) {
-        return res.json();
-      }).then(function (res) {
+      page_url = page_url || '/api/articles'; // fetch(page_url)
+      //     .then(res => {
+      //         return res.json();
+      //     })
+      //     .then(res => {
+      //         this.articles = res.data;
+      //         this.makePagination(res.meta, res.links);
+      //     })
+      //     .catch(err => console.log(err))
+
+      axios.get(page_url).then(function (response) {
+        var res = response.data;
+        console.log(response);
+        console.log(res);
         _this.articles = res.data;
 
         _this.makePagination(res.meta, res.links);
       })["catch"](function (err) {
-        return console.log(err);
+        console.log(err);
+        console.log(err);
       });
     },
     makePagination: function makePagination(meta, links) {
@@ -2039,20 +2050,32 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.edit == false) {
         // Add
-        fetch('/api/articles', {
-          method: 'POST',
-          body: JSON.stringify(this.article),
-          headers: {
-            'content-type': 'application/json'
-          }
-        }).then(function (res) {
-          return res.json();
-        }).then(function (res) {
+        // fetch('/api/articles', {
+        //     method: 'POST',
+        //     body: {
+        //         title: this.article.title,
+        //         body: this.article.body
+        //     },
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     }
+        // })
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         alert("Here we go");
+        //         this.article.title = '';
+        //         this.article.body = '';
+        //         this.fetchArticles();
+        //     })
+        // .catch(err => console.log(err))
+        axios.post('/api/articles', this.article).then(function (response) {
           alert("Here we go");
           _this3.article.title = '';
           _this3.article.body = '';
 
           _this3.fetchArticles();
+        })["catch"](function (err) {
+          console.log(err);
         });
       } else if (this.edit == true && this.article.id != null) {
         // Update
@@ -2070,6 +2093,8 @@ __webpack_require__.r(__webpack_exports__);
           _this3.article.body = '';
 
           _this3.fetchArticles();
+        })["catch"](function (err) {
+          return console.log(err);
         });
       }
     },
