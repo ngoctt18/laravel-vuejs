@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\CustomerOrder;
+use App\Events\UserCreatedEvent;
 use App\Mail\CreatedUserMail;
 use App\Role;
 use App\User;
@@ -39,7 +40,7 @@ class UserController extends Controller
         $user->message = $request->message;
         $user->roles()->attach($role);
         // send email here
-        event(new CustomerOrder($user));
+        event(new UserCreatedEvent($user));
         // ----
         return response('success');
     }

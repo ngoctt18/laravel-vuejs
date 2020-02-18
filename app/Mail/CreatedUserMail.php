@@ -32,8 +32,7 @@ class CreatedUserMail extends Mailable
      */
     public function build()
     {
-        return $this->from('adminnn@gmail.com')
-            ->to($this->user->email)
+        return $this->to($this->user->email)
             ->markdown('emails.orders.shipped');
 //            ->view('emails.create-user-mail');
     }

@@ -2,13 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Events\CustomerOrder;
+use App\Events\UserCreatedEvent;
 use App\Mail\CreatedUserMail;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
 
-class SendMailConfirmOrder implements ShouldQueue // ===== thêm queue
+class SendMailConfirmUserListener implements ShouldQueue // ===== thêm queue
 {
     /**
      * Create the event listener.
@@ -23,10 +23,10 @@ class SendMailConfirmOrder implements ShouldQueue // ===== thêm queue
     /**
      * Handle the event.
      *
-     * @param CustomerOrder $event
+     * @param UserCreatedEvent $event
      * @return void
      */
-    public function handle(CustomerOrder $event)
+    public function handle(UserCreatedEvent $event)
     {
         Mail::queue(new CreatedUserMail($event->user)); // ===== gửi vào queue
     }

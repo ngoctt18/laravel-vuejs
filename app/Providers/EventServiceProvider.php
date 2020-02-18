@@ -19,8 +19,8 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         // ===== đăng ký event và listener
-        'App\Events\CustomerOrder' => [
-            'App\Listeners\SendMailConfirmOrder',
+        'App\Events\UserCreatedEvent' => [
+            'App\Listeners\SendMailConfirmUserListener',
         ],
     ];
 
