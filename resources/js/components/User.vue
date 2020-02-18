@@ -11,19 +11,22 @@
             <!--<img :src="this.testRoute" height="0" width="0">-->
             <div class="row">
                 <div class="col-md-3">
-                    <input type="text" v-model="userCreate.name" class="form-control" placeholder="Name...">
+                    <input type="text" v-model="userCreate.name" class="form-control" placeholder="Name ...">
                 </div>
                 <div class="col-md-3">
-                    <input type="email" v-model="userCreate.email" class="form-control" placeholder="User email...">
+                    <input type="email" v-model="userCreate.email" class="form-control" placeholder="User email ...">
                 </div>
                 <div class="col-md-3">
+                    <input type="text" v-model="userCreate.message" class="form-control" placeholder="Content ...">
+                </div>
+                <div class="col-md-2">
                     <select class="form-control" v-model="userCreate.role">
                         <option value="employee">Employee</option>
                         <option value="saler">Saler</option>
                         <option value="admin">Admin</option>
                     </select>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-1">
                     <button class="btn btn-primary" @click="createUser">Create</button>
                 </div>
             </div>
@@ -86,9 +89,10 @@
         data() {
             return {
                 userCreate: {
-                    name: '',
-                    email: '',
-                    role: 'employee'
+                    name: 'Ngoc Ngoc',
+                    email: 'trantuanngoctn97@gmail.com',
+                    role: 'employee',
+                    message: 'Create an user'
                 },
                 currentUser: {},
                 selectedUser: {},
@@ -128,10 +132,11 @@
                     name: this.userCreate.name,
                     email: this.userCreate.email,
                     role: this.userCreate.role,
+                    message: this.userCreate.message,
                 })
                     .then(response => {
                         console.log(response);
-                        this.userCreate = {};
+                        // this.userCreate = {};
                         this.getListUsers();
                         this.errors = [];
                     })

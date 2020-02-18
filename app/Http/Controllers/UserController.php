@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CustomerOrder;
+use App\Mail\CreatedUserMail;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -32,10 +35,12 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt('123456');
         $role = Role::where('name', $request->role)->first();
-
         $user->save();
-
+        $user->message = $request->message;
         $user->roles()->attach($role);
+        // send email here
+        event(new CustomerOrder($user));
+        // ----
         return response('success');
     }
 
