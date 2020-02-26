@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route('home');
 //    return view('welcome');
 })->middleware('auth');
 
@@ -24,12 +24,11 @@ Route::get('/dashboard', function () {
     return view('welcome');
 })->middleware('auth')->name('dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware(['can:gate-in-route']);
 
 Route::resource('users', 'UserController');
 
 Route::get('articles', 'ArticleController@index')->name('news.index');
-
 
 
 Route::get('/getCurrentUser', function () {

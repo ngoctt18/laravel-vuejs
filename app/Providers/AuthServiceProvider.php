@@ -25,6 +25,22 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // admin, editor, author, member
+        Gate::define('gate-in-view', function () {
+            return true;  // cần trả về true or false
+        });
+
+        Gate::define('gate-in-route', function () {
+            return true;
+        });
+
+        Gate::define('gate-in-controller', function () {
+            return true;
+        });
+
+        Gate::define('is-admin', function ($user) {
+            // $user: dang login
+            return $user->email === 'admin@gmail.com';  // cần trả về true or false
+        });
     }
 }

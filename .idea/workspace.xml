@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="074e9703-2c47-4352-bb1c-b39d6e80bc97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Events/CustomerOrder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/SendMailConfirmOrder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/CreatedUserMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/CreatedUserMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +222,12 @@
       <workItem from="1581577131079" duration="7895000" />
       <workItem from="1581644727210" duration="5609000" />
       <workItem from="1581908233161" duration="20388000" />
-      <workItem from="1581990637721" duration="13438000" />
+      <workItem from="1581990637721" duration="15804000" />
+      <workItem from="1582076570879" duration="8715000" />
+      <workItem from="1582103728567" duration="1657000" />
+      <workItem from="1582163039974" duration="1383000" />
+      <workItem from="1582519309072" duration="3531000" />
+      <workItem from="1582688579134" duration="5478000" />
     </task>
     <servers />
   </component>
@@ -285,18 +288,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1600.860@0.0.1600.860" timestamp="1582000917539" />
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1581990732725">
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog" timestamp="1582163048239">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1581990732725" />
+    <state x="476" y="253" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1582163048239" />
     <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578472382106">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="607" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1578472382106" />
-    <state x="486" y="151" width="758" height="628" key="find.popup" timestamp="1582001592879">
+    <state x="486" y="151" width="758" height="628" key="find.popup" timestamp="1582098614663">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="486" y="151" width="758" height="628" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1582001592879" />
+    <state x="486" y="151" width="758" height="628" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1582098614663" />
     <state x="441" y="156" width="700" height="530" key="recent.locations.popup" timestamp="1581934835266">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -305,11 +308,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="456" y="195" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1578471761485" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1582000082936">
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1582689883101">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="445" y="188" width="672" height="710" key="search.everywhere.popup/0.0.1538.900@0.0.1538.900" timestamp="1578538568261" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1582000082936" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1582689883101" />
     <state x="522" y="334" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1578299464462">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

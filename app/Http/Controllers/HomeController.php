@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('gate-in-controller');
+
         $request->user()->authorizeRoles(['employee', 'admin']);
         return view('home');
     }
