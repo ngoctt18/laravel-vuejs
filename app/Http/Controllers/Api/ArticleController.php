@@ -42,10 +42,10 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article)
     {
-        $this->validate($request->all(), [
-            'title' => 'required|min:5',
-            'body' => 'required|min:5'
-        ]);
+//        $this->validate($request->all(), [
+//            'title' => 'required|min:5',
+//            'body' => 'required|min:5'
+//        ]);
         $article->title = $request->input('title');
         $article->body = $request->input('body');
 

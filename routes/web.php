@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware(['can:gate
 Route::resource('users', 'UserController');
 
 Route::get('articles', 'ArticleController@index')->name('news.index');
+Route::get('articles/{article}', 'ArticleController@show');
 
 
 Route::get('/getCurrentUser', function () {
